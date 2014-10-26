@@ -11,14 +11,11 @@ public class Test
 		//hash the personal dictionary entries
 		
 		HashTable<MyString> entries = new HashTable<MyString>();
-		
-		MyString frog = new MyString("frog");
-		MyString frog2 = new MyString("frog");
-		
-		entries.insert(frog);
-		entries.insert(frog2);
+//		
+//		entries.insert("frog");
+////		entries.insert(frog2);
 		//input words from big dictionary (specified in 1st cmd line arg)
-		/*
+		
 		Scanner in = new Scanner(new File(args[0]));
 		while (in.hasNextLine())
 		{
@@ -33,13 +30,13 @@ public class Test
 			entries.insert(new MyString(in2.nextLine().toLowerCase()));
 		}
 		in2.close();
-		*/
+		
 		
 		// testing
-		System.out.println(entries.contains(frog));
+
 		//System.out.println(entries.contains(new MyString("discotec")));
 		
-		/*
+		
 		//read input file, to spellcheck
 		Scanner in3 = new Scanner(new File(args[2]));
 		
@@ -77,7 +74,7 @@ public class Test
 			}
 			lineCounter++;
 		}	
-		*/
+		
 		//for every word in the input file, call contains to see if correct
 		//if so, pass over it
 		//if not, 

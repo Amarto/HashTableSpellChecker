@@ -14,19 +14,21 @@ public class MyString
 	{
 		this.word = word;
 	}
-	
 
 	public int hashCode()
 	{
-		System.out.println("MyString hashCode called");
 	    int hashVal = 0;
 	    for (int i = 0; i < word.length(); i++)
 	    {
 	    	hashVal += 13 * hashVal + word.charAt(i);	
 	    }
-	    //System.out.println(hashVal);
 	    	
 	    return Math.abs(hashVal);
+	}
+	
+	public boolean equals(Object other)
+	{
+		return this.hashCode() == other.hashCode();
 	}
 	
 	public String toString()
