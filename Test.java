@@ -55,16 +55,24 @@ public class Test
 //					
 //					//then, output all words obtainable by adding one character
 //					
-//					char ch = 'a';
-//					while(ch != 'z')
-//					{
-//						for (int i = 0; i < myS.length() + 1; i++)
-//						{
-//							//insert characters a-z at this location
-//							String s = new StringBuilder(myS.toString()).insert(i, ch).toString();
-//							MyString myS2 = new MyString(s);
-//						}
-//					} 	
+					char ch = 'a';
+					while(ch != 'z')
+					{
+						for (int i = 0; i < string3.length() + 1; i++)
+						{
+							//insert characters a-z at this location
+							String s = new StringBuilder(string3.toString()).insert(i, ch).toString();
+							MyString myS2 = new MyString(s); 
+//							System.out.println(myS2.toString());
+							
+							if (entries.contains(myS2))
+							{
+								System.out.println(myS2);
+							}
+							
+						}
+						ch++;
+					} 	
 //					
 //					//removing one character
 //					

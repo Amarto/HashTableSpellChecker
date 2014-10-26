@@ -20,7 +20,7 @@ public class MyString
 	    int hashVal = 0;
 	    for (int i = 0; i < word.length(); i++)
 	    {
-	    	hashVal += 13 * hashVal + word.charAt(i);	
+	    	hashVal += Math.pow(13, i) * hashVal + word.charAt(i);	
 	    }
 	    	
 	    return Math.abs(hashVal);
