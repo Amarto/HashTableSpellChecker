@@ -8,24 +8,38 @@
 
 public class MyString
 {
-	private String word; 
+	private String word; //the wrapped string
 	
+	/**
+	 * Constructs a new MyString object
+	 * @param word the passed string
+	 */
 	public MyString(String word)
 	{
 		this.word = word;
 	}
 
+	/**
+	 * HashCode method for MyString objects
+	 * overrides Object's hashCode method
+	 */
 	public int hashCode()
 	{
 	    int hashVal = 0;
 	    for (int i = 0; i < word.length(); i++)
 	    {
-	    	hashVal += Math.pow(13, i) * hashVal + word.charAt(i);	
+	    	hashVal += 37 * hashVal + word.charAt(i);	
 	    }
 	    	
 	    return Math.abs(hashVal);
 	}
 	
+	/**
+	 * Equals method for MyString objects
+	 * After a long time of banging my head against a wall,
+	 * I realized that I needed to modify this to override Object's
+	 * equals method because I overrode hashCode
+	 */
 	public boolean equals(Object other)
 	{
 		return this.hashCode() == other.hashCode();
@@ -36,6 +50,10 @@ public class MyString
 		return word;
 	}
 	
+	/**
+	 * get method for a string's length
+	 * @return length of word
+	 */
 	public int length()
 	{
 		return word.length();

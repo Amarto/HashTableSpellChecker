@@ -96,8 +96,8 @@ public class HashTable<AnyType>
         while( array[ currentPos ] != null &&
                 !array[ currentPos ].element.equals( x ) )
         {
-            currentPos += offset;  // Compute ith probe
-            offset += 2;
+            currentPos = offset * offset;  // Compute ith probe
+            offset++;
             if( currentPos >= array.length )
                 currentPos -= array.length;
         }
