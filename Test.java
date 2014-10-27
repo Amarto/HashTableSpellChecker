@@ -15,7 +15,7 @@ public class Test
 		{
 			String s = in.nextLine();
 			
-//			//remove commas and periods at end of word
+//			//TODO remove commas and periods at end of word
 //			if (s.charAt(s.length()-1) == ',' || s.charAt(s.length()-1) == '.')
 //				s = s.substring(0, s.length()-1);
 //				
@@ -65,6 +65,7 @@ public class Test
 //					
 //					
 //					//exchanging adjacent characters
+					exchangeAdjacentChars(string3, entries);
 				}
 			}
 			lineCounter++;
@@ -103,6 +104,12 @@ public class Test
 		} 
 	}
 	
+	/**
+	 * Remove a character (one at a time) from a string and check if the 
+	 * resulting word is in the hash table
+	 * @param string3 original word
+	 * @param entries hash table
+	 */
 	public static void removeChar(MyString string3, HashTable<MyString> entries)
 	{
 		for (int j = 0; j < string3.length(); j++)
@@ -120,8 +127,29 @@ public class Test
 		}	
 	}
 	
+	/**
+	 * Exchange adjacent chars in a word
+	 * output it if it is in the dictionary
+	 * @param string3 the original word
+	 * @param entries the hash table
+	 */
 	public static void exchangeAdjacentChars(MyString string3, HashTable<MyString> entries)
 	{
-		
+		for (int i=0; i < string3.length() - 1; i++)
+		{
+			String s = string3.toString();
+			char temp = s.charAt(i);
+			StringBuilder strbuild = new StringBuilder(s);
+			strbuild.setCharAt(i+1, temp);
+			strbuild.setCharAt(i, s.charAt(i+1));
+			s = strbuild.toString();
+
+			MyString myS = new MyString(s.toLowerCase());
+			
+			if(entries.contains(myS))
+			{
+				System.out.println(myS);
+			}
+		}
 	}
 }
