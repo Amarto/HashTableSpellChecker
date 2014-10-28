@@ -5,7 +5,6 @@
  *
  */
 
-
 public class MyString
 {
 	private String word; //the wrapped string
@@ -28,9 +27,9 @@ public class MyString
 	    int hashVal = 0;
 	    for (int i = 0; i < word.length(); i++)
 	    {
-	    	hashVal += 37 * hashVal + word.charAt(i);	
+	    	hashVal += 23 * hashVal + 7 * word.charAt(i) + i;	
 	    }
-	    	
+	    
 	    return Math.abs(hashVal);
 	}
 	
@@ -58,7 +57,4 @@ public class MyString
 	{
 		return word.length();
 	}
-	
-	
-
 }
