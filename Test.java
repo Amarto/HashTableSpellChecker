@@ -42,15 +42,19 @@ public class Test
 			if (input1Line.charAt(input1Line.length()-1) == ',' || 
 					input1Line.charAt(input1Line.length()-1) == '.')
 				input1Line = input1Line.substring(0, input1Line.length()-1);
-				
+			
+
 			entries.insert(new MyString(input1Line.toLowerCase()));
+
+			
 			bigDictionaryLineCounter++;
 		}	
 		br.close();
 		
-		System.out.println("Successful inserts from bigdict: " + bigDictionaryLineCounter);
+//		System.out.println("Successful inserts from bigdict: " + bigDictionaryLineCounter);
 
 		//input words from personal dictionary
+		int personalDictionaryCounter = 0;
 		BufferedReader br2 = new BufferedReader(new FileReader(new File(args[1])));
 		String input2Line;
 		while ((input2Line = br2.readLine()) != null)
@@ -58,10 +62,21 @@ public class Test
 			//remove commas and periods from end of word
 			if (input2Line.charAt(input2Line.length()-1) == ',' || 
 					input2Line.charAt(input2Line.length()-1) == '.')
-				input2Line = input2Line.substring(0, input2Line.length()-1);					
+				input2Line = input2Line.substring(0, input2Line.length()-1);
+			
 			entries.insert(new MyString(input2Line.toLowerCase()));
+			personalDictionaryCounter++;
 		}
 		br2.close();
+//		System.out.println("Successful inserts from personal dictionary: " +
+//		personalDictionaryCounter);
+//		
+//		System.out.println("Total: " + (personalDictionaryCounter + bigDictionaryLineCounter));
+		
+//		
+//		System.out.println("Size: " + entries.size());
+//		System.out.println("Capacity: " + entries.capacity());
+//		System.out.println(entries.contains(new MyString("s")));
 			
 		//read input file, to spellcheck
 		BufferedReader br3 = new BufferedReader(new FileReader(new File(args[2])));

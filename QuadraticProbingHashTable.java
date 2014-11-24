@@ -19,7 +19,7 @@ public class QuadraticProbingHashTable<AnyType>
      */
     private void allocateArray( int arraySize )
     {
-        array = new HashEntry[ nextPrime( arraySize ) ];
+        array = new HashEntry[nextPrime(arraySize)];
     }
 	
     /**
@@ -247,4 +247,4 @@ public class QuadraticProbingHashTable<AnyType>
 
         return true;
     }
-}   
+}  

@@ -27,7 +27,8 @@ public class MyString
 	    int hashVal = 0;
 	    for (int i = 0; i < word.length(); i++)
 	    {
-	    	hashVal += 23 * hashVal + 7 * word.charAt(i) + i;	
+	    	hashVal += 1049 * hashVal + 2011 * word.charAt(i) + 
+	    			2333 * i + 2153 * i * i + 3037 * i * i * i;	
 	    }
 	    
 	    return Math.abs(hashVal);
