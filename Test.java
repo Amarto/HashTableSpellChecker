@@ -1,8 +1,5 @@
 /**
  * Hash table spell checker
- * Data Structures Assignment 3, Programming question 2
- * Prof. Paul Blaer
- * @author amartorajaram aar2160
  * 
  * Reads a dictionary, a personal dictionary, and an input file(to be spellchecked)
  * Reads the dictionaries into a hash table, and checks to see if each word 
